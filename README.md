@@ -1,6 +1,6 @@
 # React native plugin to read SMS messages
 
-This plugin is a fork from [react-native-read-sms](https://github.com/KetanDhopeshwarkar/react-native-read-sms) which is  used to read any new upcoming SMS.
+This plugin is a fork from [react-native-read-sms](https://github.com/KetanDhopeshwarkar/react-native-read-sms) which is  used to read any new upcoming SMS.<br />
 Supported and tested up to React Native V0.63.3
 
 ## Getting started 
