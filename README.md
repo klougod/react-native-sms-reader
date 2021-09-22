@@ -1,9 +1,9 @@
-# React native plugin for Read SMS
+# React native plugin to read SMS messages
 
-    This plugin is used to read any new upcoming SMS.
-    Supported and tested up to React Native V0.61.5
+    This plugin is a fork from [react-native-read-sms](https://github.com/KetanDhopeshwarkar/react-native-read-sms) which is  used to read any new upcoming SMS.
+    Supported and tested up to React Native V0.63.3
 
-## Getting started
+## Getting started 
 
 `$ npm install react-native-sms-reader --save`
 
@@ -23,13 +23,13 @@ For react-native < V0.59.0
 
 ```javascript
 import React from "react";
-import * as ReadSms from "react-native-sms-reader/ReadSms";
+import SmsReader from "react-native-sms-reader";
 
 export const ReadSMSComponent: FC = () => {
   const startReadSMS = async () => {
-    const hasPermission = await ReadSms.requestReadSMSPermission();
+    const hasPermission = await SmsReader.requestReadSMSPermission();
     if (hasPermission) {
-      ReadSms.startReadSMS((status, sms, error) => {
+      SmsReader.startReadSMS((status, sms, error) => {
         if (status == "success") {
           console.log("Great!! you have received new sms:", sms);
         }
@@ -40,9 +40,7 @@ export const ReadSMSComponent: FC = () => {
   useEffect(() => {
     startReadSMS();
 
-    return () => {
-      ReadSms.stopReadSMS();
-    };
+    return () => SmsReader.stopReadSMS();
   }, []);
 };
 ```
@@ -51,7 +49,7 @@ export const ReadSMSComponent: FC = () => {
 
 ```javascript
 import React, { Component } from "react";
-import * as ReadSms from "react-native-read-sms/ReadSms";
+import SmsReader from "react-native-read-sms";
 
 export default class ReadSMSComponent extends Component {
   constructor(props) {
@@ -63,9 +61,9 @@ export default class ReadSMSComponent extends Component {
   };
 
   startReadSMS = async () => {
-    const hasPermission = await ReadSms.requestReadSMSPermission();
+    const hasPermission = await SmsReader.requestReadSMSPermission();
     if (hasPermission) {
-      ReadSms.startReadSMS((status, sms, error) => {
+      SmsReader.startReadSMS((status, sms, error) => {
         if (status == "success") {
           console.log("Great!! you have received new sms:", sms);
         }
@@ -74,7 +72,7 @@ export default class ReadSMSComponent extends Component {
   };
 
   componentWillUnmount = () => {
-    ReadSms.stopReadSMS();
+    SmsReader.stopReadSMS();
   };
 }
 ```
