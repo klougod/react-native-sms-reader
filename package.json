@@ -4,7 +4,8 @@
   "version": "2.0.1",
   "description": "This plugin is used to read new recived sms.",
   "main": "./dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./dist",

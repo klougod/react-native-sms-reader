@@ -1,3 +1,3 @@
-import * as ReadSms from './SmsReader/SmsReader';
+import * as SmsReader from "./SmsReader/SmsReader";
 
-export default ReadSms;
+export default SmsReader;
